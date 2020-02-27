@@ -2,7 +2,6 @@ package com.example.barcode_generator
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
  class BarcodeGeneratorPlugin : FlutterPlugin {
   override fun onAttachedToEngine(binding: FlutterPluginBinding) {
