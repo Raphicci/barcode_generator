@@ -1,15 +1,14 @@
 package com.example.barcode_generator
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
- class BarcodeGeneratorPlugin {
-    companion object {
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            registrar
-                    .platformViewRegistry()
-                    .registerViewFactory(
-                            "ihx.flutter.io/barcode_view", BarcodeViewFactory(registrar.messenger()))
-    }
+ class BarcodeGeneratorPlugin : FlutterPlugin {
+  override fun onAttachedToEngine(binding: FlutterPluginBinding) {
+    binding.getPlatformViewRegistry().registerViewFactory("ihx.flutter.io/barcode_view", BarcodeViewFactory(binding.getBinaryMessenger()))
   }
+
+  override fun onDetachedFromEngine(binding: FlutterPluginBinding) {}
 }
 
